@@ -133,15 +133,15 @@ const tenue = [];
      tenue.push ({icone :"🧣", texte : "Une veste suffira"});
   } else if (temperature >= 30) {
      tenue.push ({icone :"👕", texte : "Habits légers recommandés"});
-  }
-
+  } 
+  
   if (conditions === "pluvieux") {
      tenue.push({icone : "☂️", texte: "N'oublie pas ton parapluie"});
-  } if (conditions === "orageux") {
+  } else if (conditions === "orageux") {
      tenue.push({icone : "⚠️", texte :  "Evite les zones exposées"});
-  } if (conditions === "neige") {
+  } else if (conditions === "neige") {
      tenue.push({icone : "👢", texte : "Préfère les botte imperméables"});
-  } if (conditions === "ensoleille" && temperature > 20) {
+  } else if (conditions === "ensoleille" && temperature > 20) {
      tenue.push({icone : "🕶️", texte : "Pense aux lunettes et à la crème solaire"});
   } 
   return tenue;
@@ -192,3 +192,20 @@ btnAnalyser.addEventListener("click", () => {
 
   afficherResultat(temperature, conditions)
 })
+
+// Question n°1
+
+// Dans recommanderTenue, pourquoi utilises-tu des if séparés pour les conditions météo plutôt que des else if ?
+
+// Réponse
+
+// Si tout le "bloc" recommanderTenue est consituté de else/if, il n'y aura qu'une icone et description, la 2e recommandation n'apparaitra pas
+
+
+// Question n°2
+
+// Que se passe-t-il si l'utilisateurice entre une température de 28°C avec des conditions "ensoleille" ? Quelles recommandations s'affichent et pourquoi ?
+
+// Réponse
+
+// Le résultat est le smiley "🌞" et un "temps agréable" en description. Les recommandations s'affichant sont l'incone "🕶️" et "pense aux lunettes et à la crème solaire" car la température est supérieure à 20 et la condition est "ensoleille". il n'y a pas de "tenue" car pas d'icone prévue pour une température comprise de 20 à 29°. 
